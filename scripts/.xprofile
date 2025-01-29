@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+XMODMAP_FILE="$HOME/.Xmodmap"
+are_keybindings_set() {
+    if ! { xmodmap -pke | grep -q "keycode  66 = Caps_Lock"; } && ! { xmodmap -pke | grep -q "keycode   9 = Escape"; } then
+        return 1
+    fi
+    return 0  # Both conditions passed
+}
+
+if ! are_keybindings_set; then
+    if [ -f "$XMODMAP_FILE" ]; then
+        xmodmap "$XMODMAP_FILE"
+    fi
+else
+    echo "Keybindings are already set."
+fi

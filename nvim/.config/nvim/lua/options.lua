@@ -5,7 +5,6 @@ local opt = vim.opt
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
--- Make line numbers default
 opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
@@ -66,3 +65,9 @@ opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 opt.hlsearch = true
+vim.filetype.add({
+	pattern = {
+		[".*%.wgsl"] = "wgsl",
+	},
+})
+vim.o.swapfile = false
