@@ -1,6 +1,9 @@
+command = /usr/bin/zsh
 theme = tokyonight
 font-feature = -liga
 font-feature = -calt
 font-feature = -dlig
 keybind = ctrl+shift+p=toggle_fullscreen
 mouse-hide-while-typing = true
+window-decoration = false
+
